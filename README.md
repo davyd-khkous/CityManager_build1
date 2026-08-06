@@ -154,3 +154,5 @@ Gra kończy się przegraną, jeśli:
 ## 📄 Licencja
 
 MIT — see [LICENSE](LICENSE).
+
+---
