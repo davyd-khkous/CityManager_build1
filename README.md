@@ -1,133 +1,156 @@
 # 🏙️ City Manager
 
-Текстово-графическая игра-менеджер города на Python с графическим интерфейсом на Tkinter. Управляйте ресурсами, стройте здания и выживайте в условиях случайных катастроф.
+Tekstowo-graficzna gra-menedżer miasta napisana w Pythonie z interfejsem graficznym w Tkinter. Zarządzaj zasobami, buduj budynki i przetrwaj losowe katastrofy.
 
 ---
 
-## 📋 Описание
+## 📋 Opis
 
-City Manager — пошаговая стратегия, в которой игрок управляет небольшим городом. Каждый день необходимо следить за балансом еды, денег, населения и счастья жителей. Строительство зданий помогает расширять город, но случайные события могут нарушить все планы.
+City Manager to turowa gra strategiczna, w której gracz zarządza niewielkim miastem. Każdego dnia trzeba pilnować bilansu jedzenia, pieniędzy, populacji i szczęścia mieszkańców. Budowa nowych obiektów pozwala rozwijać miasto, ale losowe wydarzenia mogą zniweczyć wszystkie plany.
 
 ---
 
-## 🚀 Запуск
+## 🚀 Uruchomienie
 
-### Требования
+### Wymagania
 
 - Python 3.x
-- Стандартная библиотека Python (tkinter, json, random — дополнительная установка не нужна)
+- Standardowa biblioteka Pythona (tkinter, json, random — dodatkowa instalacja nie jest wymagana)
 
-### Установка и запуск
+### Instalacja i uruchomienie
 
 ```bash
-# Клонируйте или скачайте проект
-git clone <url-репозитория>
-cd city-manager
+# Sklonuj lub pobierz projekt
+git clone https://github.com/davyd-khkous/CityManager_build1.git
+cd CityManager_build1
 
-# Запустите игру
+# Uruchom grę
 python control.py
 ```
 
 ---
 
-## 🗂️ Структура проекта
+## 🗂️ Struktura projektu
 
-| Файл | Описание |
-|------|----------|
-| `control.py` | Главный файл — GUI на Tkinter, точка входа |
-| `main.py` | Логика одного игрового дня |
-| `city.py` | Инициализация и отображение состояния города |
-| `processes.py` | Игровые процессы: производство, строительство, обновление |
-| `wydarzenia.py` | Система случайных событий |
-| `zachowanie.py` | Сохранение и загрузка игры (JSON) |
-
----
-
-## 🎮 Игровой процесс
-
-### Начальное состояние города
-
-| Параметр | Значение |
-|----------|----------|
-| День | 0 |
-| Деньги | 100 |
-| Население | 10 |
-| Еда | 10 |
-| Счастье | 50 |
-| Фермы | 1 |
-| Здания 1 ур. | 2 |
-| Шахты | 0 |
-
-### Кнопки управления
-
-- **Следующий день** — перейти к следующему ходу
-- **Построить ферму (30)** — потратить 30 монет, добавить ферму
-- **Построить шахту (40)** — потратить 40 монет, добавить шахту
-- **Построить здание ур.1 (20)** — потратить 20 монет, добавить жилой дом
-- **Сохранить 💾** — сохранить текущий прогресс в JSON-файл
-- **Загрузить 📂** — загрузить ранее сохранённую игру
-- **Выход** — закрыть игру
+| Plik | Opis |
+|------|------|
+| `control.py` | Główny plik — GUI w Tkinter, punkt wejścia |
+| `main.py` | Logika jednego dnia gry |
+| `city.py` | Inicjalizacja i wyświetlanie stanu miasta |
+| `processes.py` | Procesy gry: produkcja, budowa, aktualizacje |
+| `wydarzenia.py` | System losowych wydarzeń |
+| `zachowanie.py` | Zapis i wczytywanie gry (JSON) |
 
 ---
 
-## ⚙️ Игровая механика
+## 🎮 Rozgrywka
 
-### Каждый день происходит:
+### Stan początkowy miasta
 
-1. **Производство еды** — каждая ферма производит +10 еды
-2. **Потребление еды** — каждый житель съедает 1 единицу еды
-3. **Обновление счастья** — снижается при нехватке еды (-5) или переполненности (-2.5)
-4. **Рост / убыль населения** — зависит от счастья, еды и свободных мест
-5. **Доход от шахт** — каждая шахта приносит +0.5 монеты в день
+| Parametr | Wartość |
+|----------|---------|
+| Dzień | 0 |
+| Pieniądze | 100 |
+| Populacja | 10 |
+| Jedzenie | 10 |
+| Szczęście | 50 |
+| Farmy | 1 |
+| Budynki poz. 1 | 2 |
+| Kopalnie | 0 |
 
-### Здания
+### Przyciski sterowania
 
-| Здание | Стоимость | Эффект |
-|--------|-----------|--------|
-| Ферма | 30 монет | +10 еды в день |
-| Здание ур.1 | 20 монет | +5 мест для населения |
-| Шахта | 40 монет | +0.5 монет в день |
-
-### Население
-
-- Растёт, если счастье > 80 **или** еды достаточно с запасом (≥ население + 5), и есть свободные места
-- Убывает, если счастье < 30 **или** закончилась еда
-
-### Счастье
-
-- Минимум: 0, максимум: 100
-- Снижается при нехватке еды и переполненности города
+- **Następny dzień** — przejście do kolejnej tury
+- **Zbuduj farmę (30)** — wydaje 30 monet, dodaje farmę
+- **Zbuduj kopalnię (40)** — wydaje 40 monet, dodaje kopalnię
+- **Zbuduj budynek poz.1 (20)** — wydaje 20 monet, dodaje budynek mieszkalny
+- **Zapisz 💾** — zapisuje bieżący postęp do pliku JSON
+- **Wczytaj 📂** — wczytuje wcześniej zapisaną grę
+- **Wyjście** — zamyka grę
 
 ---
 
-## 🌪️ Случайные события
+## ⚙️ Mechanika gry
 
-Каждые 7–21 дней происходит одно из трёх событий. За 5 дней до события появляется предупреждение.
+### Każdego dnia:
 
-| Событие | Эффект |
-|---------|--------|
-| 🌵 Засуха | -20 еды |
-| 🌊 Наводнение | Разрушает одно случайное здание |
-| ⚔️ Атака | -20 населения, -30 монет |
+1. **Produkcja jedzenia** — każda farma produkuje +10 jedzenia
+2. **Zużycie jedzenia** — każdy mieszkaniec zjada 1 jednostkę jedzenia
+3. **Aktualizacja szczęścia** — spada przy braku jedzenia (-5) lub przeludnieniu (-2.5)
+4. **Wzrost / spadek populacji** — zależy od szczęścia, jedzenia i wolnych miejsc
+5. **Dochód z kopalń** — każda kopalnia przynosi +0.5 monety dziennie
+
+### Budynki
+
+| Budynek | Koszt | Efekt |
+|---------|-------|-------|
+| Farma | 30 monet | +10 jedzenia dziennie |
+| Budynek poz.1 | 20 monet | +5 miejsc dla mieszkańców |
+| Kopalnia | 40 monet | +0.5 monety dziennie |
+
+### Populacja
+
+- Rośnie, jeśli szczęście > 80 **lub** jedzenia jest wystarczająco dużo z zapasem (≥ populacja + 5), i są wolne miejsca
+- Maleje, jeśli szczęście < 30 **lub** skończyło się jedzenie
+
+### Szczęście
+
+- Minimum: 0, maksimum: 100
+- Spada przy braku jedzenia i przeludnieniu miasta
 
 ---
 
-## 💾 Сохранение и загрузка
+## 🌪️ Losowe wydarzenia
 
-Игра сохраняется в формате JSON. Сохранение включает полное состояние города и текущее запланированное событие. Для сохранения/загрузки используется стандартный диалог выбора файла.
+Co 7–21 dni dochodzi do jednego z trzech wydarzeń. Na 5 dni przed wydarzeniem pojawia się ostrzeżenie.
 
----
-
-## ☠️ Условия поражения
-
-Игра заканчивается поражением, если:
-- Население упало до **0**
-- Счастье упало до **0**
+| Wydarzenie | Efekt |
+|------------|-------|
+| 🌵 Susza | -20 jedzenia |
+| 🌊 Powódź | Niszczy jeden losowy budynek |
+| ⚔️ Atak | -20 populacji, -30 monet |
 
 ---
 
-## 📝 Примечания
+## 💾 Zapis i wczytywanie
 
-- Консольный вывод состояния города активен для целей отладки (функция `pokaz_miasto` в `city.py`)
-- Интерфейс не масштабируется (фиксированный размер окна 320×420)
-- Производительность шахты невысокая — рекомендуется строить несколько
+Gra zapisywana jest w formacie JSON. Zapis zawiera pełny stan miasta oraz aktualnie zaplanowane wydarzenie. Do zapisu/wczytywania używane jest standardowe okno wyboru pliku.
+
+---
+
+## ☠️ Warunki porażki
+
+Gra kończy się przegraną, jeśli:
+- Populacja spadnie do **0**
+- Szczęście spadnie do **0**
+
+---
+
+## 🖼️ Galeria
+
+<!-- TODO: wstaw 3–4 zrzuty ekranu, np.: -->
+<!--
+![Ekran startowy](screenshots/start.png)
+![Budowa budynku](screenshots/build.png)
+![Losowe wydarzenie](screenshots/event.png)
+![Ekran porażki](screenshots/gameover.png)
+-->
+
+## 🎬 Demo
+
+<!-- TODO: wstaw GIF lub link do wideo z rozgrywką, np.: -->
+<!-- ![Gameplay demo](screenshots/demo.gif) -->
+
+---
+
+## 📝 Uwagi
+
+- Konsolowe wypisywanie stanu miasta jest aktywne w celach debugowania (funkcja `pokaz_miasto` w `city.py`)
+- Interfejs nie jest skalowalny (stały rozmiar okna 320×420)
+- Wydajność kopalni jest niska — zaleca się budowę kilku
+
+---
+
+## 📄 Licencja
+
+<!-- TODO: dodaj plik LICENSE i link tutaj, np.: MIT — patrz [LICENSE](LICENSE). -->
