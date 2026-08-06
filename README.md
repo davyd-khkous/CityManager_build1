@@ -144,9 +144,7 @@ Gra kończy się przegraną, jeśli:
 
 ## 🎬 Demo
 
-<!-- TODO: wstaw GIF lub link do wideo z rozgrywką, np.: -->
-<!-- ![Gameplay demo](screenshots/demo.gif) -->
-
+![Gameplay demo](screenshots/ezgif-1519cd9ef65b13e0.gif)
 ---
 
 ## 📝 Uwagi
