@@ -153,4 +153,4 @@ Gra kończy się przegraną, jeśli:
 
 ## 📄 Licencja
 
-<!-- TODO: dodaj plik LICENSE i link tutaj, np.: MIT — patrz [LICENSE](LICENSE). -->
+MIT — see [LICENSE](LICENSE).
