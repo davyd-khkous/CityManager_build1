@@ -128,13 +128,19 @@ Gra kończy się przegraną, jeśli:
 
 ## 🖼️ Galeria
 
-<!-- TODO: wstaw 3–4 zrzuty ekranu, np.: -->
-<!--
-![Ekran startowy](screenshots/start.png)
-![Budowa budynku](screenshots/build.png)
-![Losowe wydarzenie](screenshots/event.png)
-![Ekran porażki](screenshots/gameover.png)
--->
+| Ekran startowy | Budowa budynku |
+|---|---|
+| ![Ekran startowy](screenshots/start.png) | ![Budowa budynku](screenshots/budynek.png) |
+
+| Ostrzeżenie o wydarzeniu | Powódź |
+|---|---|
+| ![Ostrzeżenie o wydarzeniu](screenshots/wydarzenia.png) | ![Powódź niszczy budynek](screenshots/powodz.png) |
+
+| Budowa kopalni | Koniec gry |
+|---|---|
+| ![Budowa kopalni](screenshots/farma.png) | ![Ekran porażki](screenshots/przegranie.png) |
+
+---
 
 ## 🎬 Demo
 
